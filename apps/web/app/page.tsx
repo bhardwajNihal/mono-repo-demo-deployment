@@ -2,10 +2,15 @@ import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
 
+// importing db client from the common package
+import {Client} from "@repo/db/client"
+
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
 };
+
+
 
 const ThemeImage = (props: Props) => {
   const { srcLight, srcDark, ...rest } = props;
